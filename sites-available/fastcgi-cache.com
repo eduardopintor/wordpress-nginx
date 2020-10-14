@@ -12,14 +12,14 @@ server {
 	server_name fastcgi-cache.com;
 
 	# Path to document root
-	root /sites/fastcgi-cache.com/public;
+	root /var/www/fastcgi-cache.com;
 
 	# File to be used as index
 	index index.php;
 
 	# Overrides logs defined in nginx.conf, allows per site logs.
-	access_log /sites/fastcgi-cache.com/logs/access.log;
-	error_log /sites/fastcgi-cache.com/logs/error.log;
+	access_log /var/log/nginx/fastcgi-cache.com.access.log;
+	error_log  /var/log/nginx/fastcgi-cache.com.error.log debug;
 
 	# Default server block rules
 	include global/server/defaults.conf;

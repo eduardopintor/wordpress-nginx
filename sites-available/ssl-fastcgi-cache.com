@@ -12,7 +12,7 @@ server {
 	server_name ssl-fastcgi-cache.com;
 
 	# Path to document root
-	root /sites/ssl-fastcgi-cache.com/public;
+	root /var/www/ssl-fastcgi-cache.com;
 
 	# Paths to certificate files.
 	ssl_certificate /etc/letsencrypt/live/ssl-fastcgi-cache.com/fullchain.pem;
@@ -22,8 +22,8 @@ server {
 	index index.php;
 
 	# Overrides logs defined in nginx.conf, allows per site logs.
-	access_log /sites/ssl-fastcgi-cache.com/logs/access.log;
-	error_log /sites/ssl-fastcgi-cache.com/logs/error.log;
+	access_log /var/log/nginx/ssl-fastcgi-cache.com.access.log;
+	error_log  /var/log/nginx/ssl-fastcgi-cache.com.error.log debug;
 
 	# Default server block rules
 	include global/server/defaults.conf;

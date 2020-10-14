@@ -7,14 +7,14 @@ server {
 	server_name singlesite.com;
 
 	# Path to document root
-	root /sites/singlesite.com/public;
+	root /var/www/singlesite.com;
 
 	# File to be used as index
 	index index.php;
 
 	# Overrides logs defined in nginx.conf, allows per site logs.
-	access_log /sites/singlesite.com/logs/access.log;
-	error_log /sites/singlesite.com/logs/error.log;
+	access_log /var/log/nginx/singlesite.com.access.log;
+	error_log  /var/log/nginx/singlesite.com.error.log debug;
 
 	# Default server block rules
 	include global/server/defaults.conf;
